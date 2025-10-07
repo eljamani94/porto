@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './CertificationsSection.module.css';
+import Image from 'next/image';
+import getConfig from 'next/config';
 
 const certifications = [
   {
@@ -35,6 +37,8 @@ const certifications = [
 ];
 
 export default function CertificationsSection() {
+  const { publicRuntimeConfig } = getConfig() || {};
+  const basePath = publicRuntimeConfig?.basePath || '';
   return (
     <section className={styles.certificationsSection}>
       <h2 className={styles.heading}>
@@ -45,7 +49,13 @@ export default function CertificationsSection() {
           <li key={cert.name + cert.date} className={styles.certificationRow}>
             <span className={styles.certNum}>{idx + 1}.</span>
             <span className={styles.certMain}>
-              <img src={cert.logo} alt={cert.name + ' logo'} className={styles.certLogo} />
+              <Image 
+                src={`${basePath}${cert.logo}`} 
+                alt={cert.name + ' logo'} 
+                className={styles.certLogo}
+                width={40}
+                height={40}
+              />
               <span className={styles.certName}>{cert.name}</span>
             </span>
             <span className={styles.certDate}>{cert.date}</span>

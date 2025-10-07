@@ -1,4 +1,6 @@
 import styles from './ProjectsSection.module.css';
+import Image from 'next/image';
+import getConfig from 'next/config';
 
 const projects = [
   {
@@ -62,6 +64,8 @@ const projects = [
 import React, { useState } from 'react';
 
 export default function ProjectsSection() {
+  const { publicRuntimeConfig } = getConfig() || {};
+  const basePath = publicRuntimeConfig?.basePath || '';
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, idx: null });
 
   return (
@@ -100,7 +104,7 @@ export default function ProjectsSection() {
               </div>
             </div>
             <img
-              src={proj.image}
+              src={`${basePath}${proj.image}`}
               alt={proj.name}
               className={styles.projectImg}
               style={{ width: 170, height: 120, objectFit: 'cover', borderRadius: 12 }}
