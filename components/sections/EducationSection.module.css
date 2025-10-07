@@ -90,32 +90,39 @@
 }
 
 .diplomaImages {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   justify-content: center;
-  align-items: center;
-  margin-top: 28px;
-  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .diplomaContainer {
   position: relative;
-  width: 300px;
-  height: 200px;
-  border-radius: 8px;
+  aspect-ratio: 3/2;
+  min-height: 200px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.diplomaContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .diploma {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
+  padding: 1rem !important;
   border-radius: 8px !important;
   transition: transform 0.3s ease;
-}
-
-.diploma:hover {
-  transform: scale(1.05);
+  background-color: white;
 }

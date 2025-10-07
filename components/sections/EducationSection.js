@@ -44,10 +44,37 @@ export default function EducationSection() {
           </li>
         ))}
       </ul>
-      <div className={styles.diplomasContainer}>
-        <img src="/diploma1.jpg" alt="Diploma 1" className={styles.diploma} />
-        <img src="/diploma2.jpg" alt="Diploma 2" className={styles.diploma} />
-        <img src="/diploma3.jpg" alt="Diploma 3" className={styles.diploma} />
+      <div className={styles.diplomaImages}>
+        <div className={styles.diplomaContainer}>
+          <Image
+            src={`${basePath}/diploma1.jpg`}
+            alt="Diploma 1"
+            className={styles.diploma}
+            width={300}
+            height={200}
+            priority
+          />
+        </div>
+        <div className={styles.diplomaContainer}>
+          <Image
+            src={`${basePath}/diploma2.jpg`}
+            alt="Diploma 2"
+            className={styles.diploma}
+            width={300}
+            height={200}
+            priority
+          />
+        </div>
+        <div className={styles.diplomaContainer}>
+          <Image
+            src={`${basePath}/diploma3.jpg`}
+            alt="Diploma 3"
+            className={styles.diploma}
+            width={300}
+            height={200}
+            priority
+          />
+        </div>
       </div>
     </section>
   );
