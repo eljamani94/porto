@@ -9,11 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   }
-}
-
-module.exports = nextConfig
-    unoptimized: true,
-  },
 };
 
 module.exports = nextConfig;
