@@ -1,15 +1,5 @@
 import React from 'react';
-import styles from       <div className={styles.diplomaImages}>
-        <div className={styles.diplomaContainer}>
-          <Image src={`${basePath}/diploma1.jpg`} alt="Diploma 1" className={styles.diploma} width={300} height={200} />
-        </div>
-        <div className={styles.diplomaContainer}>
-          <Image src={`${basePath}/diploma2.jpg`} alt="Diploma 2" className={styles.diploma} width={300} height={200} />
-        </div>
-        <div className={styles.diplomaContainer}>
-          <Image src={`${basePath}/diploma3.jpg`} alt="Diploma 3" className={styles.diploma} width={300} height={200} />
-        </div>
-      </div>ucationSection.module.css';
+import styles from './EducationSection.module.css';
 import Image from 'next/image';
 import getConfig from 'next/config';
 
