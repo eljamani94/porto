@@ -1,11 +1,22 @@
 import styles from './Sidebar.module.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
+import Image from 'next/image';
+import getConfig from 'next/config';
 
 export default function Sidebar() {
+  const { publicRuntimeConfig } = getConfig() || {};
+  const basePath = publicRuntimeConfig?.basePath || '';
   return (
     <aside className={styles.sidebar}>
-      <img src="/pro.png" alt="Profile" className={styles.profileImage} />
+      <div className={styles.profileImageContainer}>
+        <Image
+          src={`${basePath}/pro.png`}
+          alt="Profile"
+          className={styles.profileImage}
+          width={200}
+          height={200}
+        />
+      </div>
       <h2 className={styles.sidebarName}>Aymen El Jamani</h2>
       <div className={styles.sidebarBio}>
         Junior Data Analyst
@@ -13,8 +24,12 @@ export default function Sidebar() {
       <div className={styles.socials}>
         <a href="https://github.com/your-username" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
         <a href="https://linkedin.com/in/your-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        <a href="https://www.codewars.com/users/your-username" aria-label="Codewars" target="_blank" rel="noopener noreferrer"><img src="/codewars2.svg" alt="Codewars" width="22" height="22" style={{display:'block'}} /></a>
-        <a href="https://www.kaggle.com/your-username" aria-label="Kaggle" target="_blank" rel="noopener noreferrer"><img src="/kaggle1.svg" alt="Kaggle" width="22" height="22" style={{display:'block'}} /></a>
+        <a href="https://www.codewars.com/users/your-username" aria-label="Codewars" target="_blank" rel="noopener noreferrer">
+          <Image src={`${basePath}/codewars2.svg`} alt="Codewars" width={22} height={22} style={{display:'block'}} />
+        </a>
+        <a href="https://www.kaggle.com/your-username" aria-label="Kaggle" target="_blank" rel="noopener noreferrer">
+          <Image src={`${basePath}/kaggle1.svg`} alt="Kaggle" width={22} height={22} style={{display:'block'}} />
+        </a>
       </div>
       <div className={styles.contactInfo}>
         <div className={styles.contactRow}>

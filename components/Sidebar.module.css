@@ -16,6 +16,20 @@
   box-shadow: none;
 }
 
+.profileImageContainer {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.profileImage {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .sidebar::after {
   content: '';
   position: absolute;

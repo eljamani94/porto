@@ -7,7 +7,12 @@ const nextConfig = {
   basePath: '/porto',
   assetPrefix: '/porto',
   images: {
-    unoptimized: true
+    unoptimized: true,
+    remotePatterns: []
+  },
+  // Add public directory assets to the base path
+  publicRuntimeConfig: {
+    basePath: '/porto',
   }
 };
 
